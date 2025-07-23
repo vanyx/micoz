@@ -1,0 +1,55 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 60px;
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: white;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+}
+
+.bottom-bar a {
+    font-size: 1.5rem;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.bottom-bar a.active {
+    color: #007bff;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+    .bottom-bar {
+        width: fit-content;
+        padding: 0.5rem 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
+        background: white;
+        border-radius: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        gap: 2rem;
+    }
+
+    .bottom-bar a {
+        font-size: 1.75rem;
+    }
+}

@@ -1,6 +1,6 @@
 
 export default function Dashboard() {
   return (
-      <h1>Grut</h1>
+    <h1>Le dashboard là</h1>
   );
 }

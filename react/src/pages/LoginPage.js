@@ -1,17 +1,24 @@
 import { useState } from 'react';
 import './LoginPage.css';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from './../context/AuthContext';
+
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [touched, setTouched] = useState({ email: false, password: false });
 
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setTouched({ email: true, password: true });
 
     if (email && password) {
-      console.log('Authentification...');
+      login();
+      navigate('/dashboard');
     }
   };
 
